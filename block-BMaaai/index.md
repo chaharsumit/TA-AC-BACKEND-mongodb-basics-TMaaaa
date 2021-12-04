@@ -43,6 +43,8 @@ Go to `https://www.json-generator.com/`
 - download it on `Desktop`
 - import it into mongodb `test` database into a collection named `users`
 
+**mongoimport --db blog --collection users --file /Users/sumitchahar/Work/Altcampus/TA-AC-BACKEND-mongodb-basics-TMaaaa/block-BMaaai/generated.json
+
 #### Export data from mongodb server to local system in json format using
 
 `mongoexport`command.
@@ -55,6 +57,8 @@ mongoexport --db state --collection cities --out ~/Desktop/states/city.json --js
 
 Export `users` collection from `test` database onto `Desktop` in a file named `exported.json`.
 
+mongoexport --db test --collection users --out ~/Desktop/states/exported.json --jsonArray
+
 #### Import from csv file
 
 ```
@@ -66,3 +70,5 @@ mongoimport -d DB_NAME -c COLLECTION_NAME --type csv --file elections.csv(file l
 Generate mock csv data from `https://www.convertcsv.com/generate-test-data.htm`
 
 - insert this mock csv data into `test` database into a collection named `students`
+
+**mongoimport -d test -c students --type csv --file /Users/sumitchahar/Work/Altcampus/TA-AC-BACKEND-mongodb-basics-TMaaaa/block-BMaaai/convertcsv.csv --headerline
