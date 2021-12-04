@@ -241,13 +241,13 @@ let users = [
 Insert above data into database to perform below queries:-
 
 - Find all males who play cricket.
--> db.users.find({tags: 'cricket'})
+-> db.users.find({gender: 'Male'}, {sports: 'cricket'})
 
 - Update user with extra golf field in sports array whose name is "Steve Ortega".
--> db.users.update({name: 'Steve Ortega'}, tags: {$push: 'golf'}})
+-> db.users.update({name: 'Steve Ortega'}, tags: {$push: {sports: 'golf'}})
 
 - Find all users who play either 'football' or 'cricket'.
--> db.users.find($or: [{tags: 'cricket'},{tags: 'football'}])
+-> db.users.find({sports: {$in: ['football','cricket']}})
 
 - Find all users whose name includes 'ri' in their name.
--> db.users.find()
+-> db.users.find({name: /ri/i})
